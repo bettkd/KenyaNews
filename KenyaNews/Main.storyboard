@@ -199,6 +199,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnRevealMenu" destination="KDE-PS-tVL" id="tUN-7i-lHS"/>
+                        <outlet property="videoPlayer" destination="2Ph-NS-X9X" id="oxG-IY-mQ6"/>
                         <outlet property="videosTableView" destination="slG-Xh-Gca" id="1ga-jD-OTP"/>
                     </connections>
                 </viewController>

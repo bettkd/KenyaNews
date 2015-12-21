@@ -25,7 +25,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     
     @IBOutlet weak var videosTableView: UITableView!
     @IBOutlet weak var btnRevealMenu: UIBarButtonItem!
-    //@IBOutlet var videoPlayer: YTPlayerView!
+    @IBOutlet var videoPlayer: UIView!
     
     //let playerFrame:CGRect = CGRect(origin: CGPoint(x: 0, y: 0), size: UIScreen.mainScreen().bounds.size)
     //var videoPlayer:YouTubePlayerView = YouTubePlayerView(playerFrame)
