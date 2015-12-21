@@ -51,8 +51,10 @@ class MenuTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationVC = segue.destinationViewController as! NewsFeedViewController
-        let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow!
-        destinationVC.currentChannel = indexPath.row
+        if let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow! {
+            print("hello")
+            destinationVC.currentChannel = indexPath.row
+        }
         
     }
     

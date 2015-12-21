@@ -17,9 +17,12 @@
 		8B2139651C27DF4F00096B45 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139641C27DF4F00096B45 /* NewsFeedTableViewCell.swift */; };
 		8B2139671C27DF6C00096B45 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139661C27DF6C00096B45 /* MenuViewController.swift */; };
 		8B21396B1C27E00700096B45 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139691C27E00700096B45 /* SWRevealViewController.m */; };
+		BD5F1B7D8D9526A8961A691B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48700F6B6F961221A4156252 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A526D33493AB8F518E23463 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		48700F6B6F961221A4156252 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2139451C27DE0900096B45 /* KenyaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KenyaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2139481C27DE0900096B45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B21394A1C27DE0900096B45 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		8B2139681C27E00700096B45 /* KenyaNews-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KenyaNews-Bridging-Header.h"; sourceTree = "<group>"; };
 		8B2139691C27E00700096B45 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8B21396A1C27E00700096B45 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		8FE8DC8B8E9520938233D9F2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5F1B7D8D9526A8961A691B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59539881736DF6AD527676F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48700F6B6F961221A4156252 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B21393C1C27DE0900096B45 = {
 			isa = PBXGroup;
 			children = (
 				8B2139471C27DE0900096B45 /* KenyaNews */,
 				8B2139461C27DE0900096B45 /* Products */,
+				D7D78056555108BD739AB21B /* Pods */,
+				59539881736DF6AD527676F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +106,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D7D78056555108BD739AB21B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FE8DC8B8E9520938233D9F2 /* Pods.debug.xcconfig */,
+				3A526D33493AB8F518E23463 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B2139571C27DE0900096B45 /* Build configuration list for PBXNativeTarget "KenyaNews" */;
 			buildPhases = (
+				524A7D0717E0038F3A66AD4C /* Check Pods Manifest.lock */,
 				8B2139411C27DE0900096B45 /* Sources */,
 				8B2139421C27DE0900096B45 /* Frameworks */,
 				8B2139431C27DE0900096B45 /* Resources */,
+				252D3DCECDD1AD952EF7A886 /* Embed Pods Frameworks */,
+				54B0D97FF51953AE0C8C8223 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,6 +184,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		252D3DCECDD1AD952EF7A886 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		524A7D0717E0038F3A66AD4C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		54B0D97FF51953AE0C8C8223 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B2139411C27DE0900096B45 /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		8B2139581C27DE0900096B45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FE8DC8B8E9520938233D9F2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -273,6 +349,7 @@
 		};
 		8B2139591C27DE0900096B45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A526D33493AB8F518E23463 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -303,6 +380,7 @@
 				8B2139591C27DE0900096B45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

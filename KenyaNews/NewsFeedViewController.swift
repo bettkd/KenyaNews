@@ -8,6 +8,8 @@
 
 import UIKit
 
+import YouTubePlayer
+
 class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var vtitle:Bool = false
@@ -22,10 +24,9 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     var videos = [ChannelVideo]()
     
     
-    
     @IBOutlet weak var videosTableView: UITableView!
     @IBOutlet weak var btnRevealMenu: UIBarButtonItem!
-    @IBOutlet var videoPlayer: UIView!
+    @IBOutlet var videoPlayer: YouTubePlayerView!
     
     //let playerFrame:CGRect = CGRect(origin: CGPoint(x: 0, y: 0), size: UIScreen.mainScreen().bounds.size)
     //var videoPlayer:YouTubePlayerView = YouTubePlayerView(playerFrame)
@@ -183,8 +184,8 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         cell.lblTitle.text = data.title
         cell.txtDescription.text = data.summary
         
-        //cell.btnPlayVideo.tag = indexPath.row
-        //cell.btnPlayVideo.addTarget(self, action: "playVideo:", forControlEvents: .TouchUpInside)
+        cell.btnPlayVideo.tag = indexPath.row
+        cell.btnPlayVideo.addTarget(self, action: "playVideo:", forControlEvents: .TouchUpInside)
         
         
         return cell
@@ -202,7 +203,45 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         //youTubeWebView.loadHTMLString(code, baseURL: NSBundle.mainBundle().resourceURL)
         
         print("reached here")
-        //videoPlayer.loadVideoById(video.videoID, startSeconds: 0.0, suggestedQuality: .Auto)
+        
+        
+        // Load video from YouTube ID
+        self.videoPlayer.playerVars = ["playsinline": "1"]
+        self.videoPlayer.loadVideoID(video.videoID)
+        
+        
+        if videoPlayer.ready {
+            if videoPlayer.playerState != YouTubePlayerState.Playing {
+                videoPlayer.play()
+            } else {
+                videoPlayer.pause()
+            }
+        }
+        
+        // Load video from YouTube URL
+        ///let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=wQg3bXrVLtg?rel=0&autoplay=1")
+        //videoPlayer.loadVideoURL(myVideoURL!)
+        //if videoPlayer.ready {
+        //    videoPlayer.play()
+        //}
+        
+        //let playerVars:NSDictionary = ["controls":0, "playsinline":0, "autohide":1, "showinfo":0, "modestbranding":1]
+        
+        //videoPlayer.loadWithVideoId("Rg6GLVUnnpM")
+        
+        //videoPlayer.seekToSeconds(0.0, allowSeekAhead: true)
+        
+        //videoPlayer.playVideo()
+        
+        //print(playerVars)
+        
+        //videoPlayer.loadVideoById(video.videoID, startSeconds: 0.0, suggestedQuality: .Default)
+        //sleep(5)
+        //if videoPlayer.playerState().rawValue == 1 {
+        //    videoPlayer.playVideo()
+        //}
+        //videoPlayer.loadVideoByURL(videoUrl, startSeconds: 0.0, suggestedQuality: .Default)
+        //videoPlayer.l
         print("just one more")
         //videoPlayer.playVideo()
         
