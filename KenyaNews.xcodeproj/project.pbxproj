@@ -17,6 +17,13 @@
 		8B2139651C27DF4F00096B45 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139641C27DF4F00096B45 /* NewsFeedTableViewCell.swift */; };
 		8B2139671C27DF6C00096B45 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139661C27DF6C00096B45 /* MenuViewController.swift */; };
 		8B21396B1C27E00700096B45 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139691C27E00700096B45 /* SWRevealViewController.m */; };
+		8B2139761C28F10100096B45 /* OvalLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139711C28F10100096B45 /* OvalLayer.swift */; };
+		8B2139771C28F10100096B45 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139721C28F10100096B45 /* TriangleLayer.swift */; };
+		8B2139781C28F10100096B45 /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139731C28F10100096B45 /* RectangleLayer.swift */; };
+		8B2139791C28F10100096B45 /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139741C28F10100096B45 /* ArcLayer.swift */; };
+		8B21397A1C28F10100096B45 /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139751C28F10100096B45 /* HolderView.swift */; };
+		8B21397F1C28F19400096B45 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B21397E1C28F19400096B45 /* Colors.swift */; };
+		8B2139821C28F31C00096B45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139811C28F31C00096B45 /* ViewController.swift */; };
 		BD5F1B7D8D9526A8961A691B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48700F6B6F961221A4156252 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +44,13 @@
 		8B2139681C27E00700096B45 /* KenyaNews-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KenyaNews-Bridging-Header.h"; sourceTree = "<group>"; };
 		8B2139691C27E00700096B45 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8B21396A1C27E00700096B45 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		8B2139711C28F10100096B45 /* OvalLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalLayer.swift; sourceTree = "<group>"; };
+		8B2139721C28F10100096B45 /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
+		8B2139731C28F10100096B45 /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
+		8B2139741C28F10100096B45 /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
+		8B2139751C28F10100096B45 /* HolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
+		8B21397E1C28F19400096B45 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8B2139811C28F31C00096B45 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8FE8DC8B8E9520938233D9F2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,9 +103,9 @@
 				8B2139661C27DF6C00096B45 /* MenuViewController.swift */,
 				8B21395C1C27DED900096B45 /* MenuTableViewController.swift */,
 				8B21394F1C27DE0900096B45 /* Assets.xcassets */,
-				8B2139621C27DF3D00096B45 /* LaunchScreen.storyboard */,
-				8B2139541C27DE0900096B45 /* Info.plist */,
+				8B2139801C28F1AC00096B45 /* Launch Screen */,
 				8B21396C1C27E00E00096B45 /* Supporting Files */,
+				8B2139541C27DE0900096B45 /* Info.plist */,
 			);
 			path = KenyaNews;
 			sourceTree = "<group>";
@@ -104,6 +118,45 @@
 				8B21396A1C27E00700096B45 /* SWRevealViewController.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B21397B1C28F10A00096B45 /* Loader View */ = {
+			isa = PBXGroup;
+			children = (
+				8B21397C1C28F12400096B45 /* Layers */,
+				8B2139751C28F10100096B45 /* HolderView.swift */,
+			);
+			name = "Loader View";
+			sourceTree = "<group>";
+		};
+		8B21397C1C28F12400096B45 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				8B2139711C28F10100096B45 /* OvalLayer.swift */,
+				8B2139721C28F10100096B45 /* TriangleLayer.swift */,
+				8B2139731C28F10100096B45 /* RectangleLayer.swift */,
+				8B2139741C28F10100096B45 /* ArcLayer.swift */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
+		8B21397D1C28F17400096B45 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8B21397E1C28F19400096B45 /* Colors.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		8B2139801C28F1AC00096B45 /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8B2139811C28F31C00096B45 /* ViewController.swift */,
+				8B21397B1C28F10A00096B45 /* Loader View */,
+				8B21397D1C28F17400096B45 /* Utilities */,
+				8B2139621C27DF3D00096B45 /* LaunchScreen.storyboard */,
+			);
+			name = "Launch Screen";
 			sourceTree = "<group>";
 		};
 		D7D78056555108BD739AB21B /* Pods */ = {
@@ -238,9 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B21397A1C28F10100096B45 /* HolderView.swift in Sources */,
 				8B21396B1C27E00700096B45 /* SWRevealViewController.m in Sources */,
+				8B2139761C28F10100096B45 /* OvalLayer.swift in Sources */,
 				8B21395D1C27DED900096B45 /* MenuTableViewController.swift in Sources */,
+				8B2139821C28F31C00096B45 /* ViewController.swift in Sources */,
+				8B2139781C28F10100096B45 /* RectangleLayer.swift in Sources */,
+				8B2139771C28F10100096B45 /* TriangleLayer.swift in Sources */,
+				8B2139791C28F10100096B45 /* ArcLayer.swift in Sources */,
 				8B2139671C27DF6C00096B45 /* MenuViewController.swift in Sources */,
+				8B21397F1C28F19400096B45 /* Colors.swift in Sources */,
 				8B21395B1C27DECE00096B45 /* ChannelVideo.swift in Sources */,
 				8B21394B1C27DE0900096B45 /* NewsFeedViewController.swift in Sources */,
 				8B2139651C27DF4F00096B45 /* NewsFeedTableViewCell.swift in Sources */,
