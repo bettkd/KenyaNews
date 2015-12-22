@@ -105,7 +105,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.81960784310000001" green="0.1647058824" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="bU5-Th-3M5"/>
                     <connections>
@@ -120,12 +120,12 @@
         <!--Navigation Controller-->
         <scene sceneID="VTv-b4-vrf">
             <objects>
-                <navigationController modalTransitionStyle="crossDissolve" id="KKI-gN-5g9" sceneMemberID="viewController">
+                <navigationController modalTransitionStyle="flipHorizontal" id="KKI-gN-5g9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BgO-RY-G52">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.078153607080000007" green="0.3816926155" blue="0.036201891200000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.078153607080000007" green="0.3816926155" blue="0.036201891200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.18039215689999999" green="0.45882352939999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                             <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -142,7 +142,7 @@
         <!--Kenya News-->
         <scene sceneID="5Nu-Jg-77h">
             <objects>
-                <viewController storyboardIdentifier="home" modalTransitionStyle="crossDissolve" id="I03-PQ-GcJ" customClass="NewsFeedViewController" customModule="KenyaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" modalTransitionStyle="flipHorizontal" id="I03-PQ-GcJ" customClass="NewsFeedViewController" customModule="KenyaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1XQ-cV-ACV"/>
                         <viewControllerLayoutGuide type="bottom" id="XrX-nz-KgV"/>
@@ -161,40 +161,66 @@
                                         <rect key="frame" x="0.0" y="92" width="309" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gJG-rP-aed" id="gPv-eY-XBF">
-                                            <rect key="frame" x="0.0" y="0.0" width="309" height="143.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="309" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-2B-He5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-2B-He5">
                                                     <rect key="frame" x="8" y="8" width="293" height="128"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93X-ae-9je">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93X-ae-9je">
                                                     <rect key="frame" x="96" y="28" width="205" height="61"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leu-ff-xRJ">
+                                                <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leu-ff-xRJ">
                                                     <rect key="frame" x="8" y="8" width="88" height="81"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="88" id="sgy-cc-5ql"/>
+                                                    </constraints>
                                                     <state key="normal" image="play"/>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" indicatorStyle="black" editable="NO" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="X6S-wE-pbl">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" pagingEnabled="YES" indicatorStyle="black" editable="NO" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="X6S-wE-pbl">
                                                     <rect key="frame" x="8" y="90" width="293" height="46"/>
                                                     <color key="backgroundColor" red="0.95686274509803926" green="0.94901960784313721" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2h-d5-5uc">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2h-d5-5uc">
                                                     <rect key="frame" x="96" y="8" width="205" height="21"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Xft-CX-4fs"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="c2h-d5-5uc" firstAttribute="top" secondItem="2BP-2B-He5" secondAttribute="top" id="CsO-bw-GIc"/>
+                                                <constraint firstItem="c2h-d5-5uc" firstAttribute="trailing" secondItem="2BP-2B-He5" secondAttribute="trailing" id="EZv-i9-0Xw"/>
+                                                <constraint firstItem="93X-ae-9je" firstAttribute="top" secondItem="gPv-eY-XBF" secondAttribute="topMargin" constant="20" id="Erb-0Z-xY1"/>
+                                                <constraint firstItem="leu-ff-xRJ" firstAttribute="bottom" secondItem="93X-ae-9je" secondAttribute="bottom" id="JoJ-XT-N0i"/>
+                                                <constraint firstItem="2BP-2B-He5" firstAttribute="leading" secondItem="gPv-eY-XBF" secondAttribute="leadingMargin" id="N3q-1h-nu9"/>
+                                                <constraint firstItem="X6S-wE-pbl" firstAttribute="leading" secondItem="2BP-2B-He5" secondAttribute="leading" id="UKN-z6-tbx"/>
+                                                <constraint firstItem="leu-ff-xRJ" firstAttribute="top" secondItem="gPv-eY-XBF" secondAttribute="topMargin" id="UwG-wx-Q9u"/>
+                                                <constraint firstItem="leu-ff-xRJ" firstAttribute="top" secondItem="c2h-d5-5uc" secondAttribute="top" id="Yxs-sl-HJK"/>
+                                                <constraint firstItem="X6S-wE-pbl" firstAttribute="trailing" secondItem="93X-ae-9je" secondAttribute="trailing" id="ZmF-2N-OHZ"/>
+                                                <constraint firstItem="2BP-2B-He5" firstAttribute="centerY" secondItem="gPv-eY-XBF" secondAttribute="centerY" id="bxd-Ee-LN9"/>
+                                                <constraint firstItem="2BP-2B-He5" firstAttribute="bottom" secondItem="X6S-wE-pbl" secondAttribute="bottom" id="dWy-ma-ICe"/>
+                                                <constraint firstItem="c2h-d5-5uc" firstAttribute="trailing" secondItem="gPv-eY-XBF" secondAttribute="trailingMargin" id="g7I-fE-1qy"/>
+                                                <constraint firstItem="leu-ff-xRJ" firstAttribute="leading" secondItem="X6S-wE-pbl" secondAttribute="leading" id="kHB-9l-HQf"/>
+                                                <constraint firstItem="X6S-wE-pbl" firstAttribute="top" secondItem="c2h-d5-5uc" secondAttribute="bottom" constant="61" id="npP-WY-ORL"/>
+                                                <constraint firstItem="c2h-d5-5uc" firstAttribute="trailing" secondItem="93X-ae-9je" secondAttribute="trailing" id="rBW-e9-dhm"/>
+                                                <constraint firstItem="c2h-d5-5uc" firstAttribute="leading" secondItem="93X-ae-9je" secondAttribute="leading" id="u3i-jV-nOL"/>
+                                                <constraint firstItem="c2h-d5-5uc" firstAttribute="leading" secondItem="leu-ff-xRJ" secondAttribute="trailing" id="wXf-2M-9OW"/>
+                                                <constraint firstItem="X6S-wE-pbl" firstAttribute="top" secondItem="leu-ff-xRJ" secondAttribute="bottom" constant="1" id="xQk-Kn-R6K"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <connections>
@@ -224,7 +250,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.078153607080000007" green="0.3816926155" blue="0.036201891200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.18039215689999999" green="0.45882352939999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Dqs-yy-19b" firstAttribute="top" secondItem="1XQ-cV-ACV" secondAttribute="bottom" id="10H-4K-JC1"/>
                             <constraint firstItem="Dqs-yy-19b" firstAttribute="leading" secondItem="C5d-5y-czk" secondAttribute="leadingMargin" constant="-11" id="9Ou-q8-yNX"/>
@@ -257,6 +283,6 @@
         <image name="show" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Adb-kp-Qm9"/>
+        <segue reference="JLg-Zf-elZ"/>
     </inferredMetricsTieBreakers>
 </document>

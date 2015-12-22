@@ -12,6 +12,11 @@ import YouTubePlayer
 
 class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    var url:String!
+    let urlRoot:String="https://www.youtube.com/feeds/videos.xml?channel_id="
+    var _channels:[String:String] = ["NTV Kenya" : "UCekTpzKodObpOcmvVCFUvTw", "KTN News": "UCKVsdeoHExltrWMuK0hOWmg", "K24 TV": "UCt3SE-Mvs3WwP7UW-PiFdqQ", "Citizen TV": "UChBQgieUidXV1CmDxSdRm3g", "KBC News": "UCypNjM5hP1qcUqQZe57jNfg"]
+    var currentChannel = "NTV Kenya"
+    
     var vtitle:Bool = false
     var vsummary:Bool = false
     var vpublished:Bool = false
@@ -27,20 +32,12 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     @IBOutlet weak var videosTableView: UITableView!
     @IBOutlet weak var btnRevealMenu: UIBarButtonItem!
     @IBOutlet var videoPlayer: YouTubePlayerView!
-    
-    
     //let playerFrame:CGRect = CGRect(origin: CGPoint(x: 0, y: 0), size: UIScreen.mainScreen().bounds.size)
     //var videoPlayer:YouTubePlayerView = YouTubePlayerView(playerFrame)
     
-    
-    
-    var _channels = ["NTV Kenya" : "UCekTpzKodObpOcmvVCFUvTw", "KTN News": "UCKVsdeoHExltrWMuK0hOWmg", "K24 TV": "UCt3SE-Mvs3WwP7UW-PiFdqQ", "Citizen TV": "UChBQgieUidXV1CmDxSdRm3g", "KBC News": "UCypNjM5hP1qcUqQZe57jNfg"]
-    
-    var currentChannel = Int()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "NTV Kenya"
+        self.navigationItem.title = currentChannel
         
         videosTableView.delegate = self
         videosTableView.dataSource = self
@@ -50,24 +47,24 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
 
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        let url:String="https://www.youtube.com/feeds/videos.xml?channel_id=UCekTpzKodObpOcmvVCFUvTw"
-        let urlToSend: NSURL = NSURL(string: url)!
-        // Parse the XML
-        parser = NSXMLParser(contentsOfURL: urlToSend)!
-        parser.delegate = self
         
-        let success:Bool = parser.parse()
+        url = urlRoot + _channels[currentChannel]!
         
-        print(currentChannel)
-        
-        if success {
-            print("parse success!")
+        if let urlToSend: NSURL = NSURL(string: url)! {
             
-            //print(video.videoID)
+            // Parse the XML
+            parser = NSXMLParser(contentsOfURL: urlToSend)!
+            parser.delegate = self
             
-        } else {
-            print("parse failure!")
+            let success:Bool = parser.parse()
+            
+            if success {
+                print("parse success!")
+            } else {
+                print("parse failure!")
+            }
         }
+
         
         self.videoPlayer.playerVars = ["playsinline": "1"]
         videoPlayer.loadVideoID(videos[0].videoID)
@@ -79,9 +76,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        print(currentChannel)
-    }
+
     
     //MARK: Parser start of element
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
@@ -217,7 +212,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         self.videoPlayer.playerVars = ["playsinline": "1"]
         self.videoPlayer.loadVideoID(video.videoID)
         
-        
+        /*
         if videoPlayer.ready {
             if videoPlayer.playerState != YouTubePlayerState.Playing {
                 videoPlayer.play()
@@ -256,6 +251,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         print (videoUrl)
         //playerView.loadVideoByURL(videoUrl, startSeconds: 0.0, suggestedQuality: .Auto)
         //playerView.playVideo()
+        */
         
     }
     

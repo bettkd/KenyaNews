@@ -60,7 +60,7 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
         if let navVC = segue.destinationViewController as? UINavigationController {
             if let destVC = navVC.viewControllers.first as? NewsFeedViewController {
                 if let indexPath = menuTableView.indexPathForSelectedRow {
-                    destVC.currentChannel = indexPath.row
+                    destVC.currentChannel = channels[indexPath.row]
                 }
             }
         }
