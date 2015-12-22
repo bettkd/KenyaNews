@@ -28,6 +28,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     @IBOutlet weak var btnRevealMenu: UIBarButtonItem!
     @IBOutlet var videoPlayer: YouTubePlayerView!
     
+    
     //let playerFrame:CGRect = CGRect(origin: CGPoint(x: 0, y: 0), size: UIScreen.mainScreen().bounds.size)
     //var videoPlayer:YouTubePlayerView = YouTubePlayerView(playerFrame)
     
@@ -67,6 +68,9 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         } else {
             print("parse failure!")
         }
+        
+        self.videoPlayer.playerVars = ["playsinline": "1"]
+        videoPlayer.loadVideoID(videos[0].videoID)
     }
     
     
