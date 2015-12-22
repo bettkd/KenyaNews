@@ -79,6 +79,10 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        print(currentChannel)
+    }
+    
     //MARK: Parser start of element
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if(elementName=="media:title" || elementName=="media:description" || elementName=="yt:videoId" || elementName=="published" || elementName=="media:thumbnail"){

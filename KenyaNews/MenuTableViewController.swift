@@ -8,13 +8,19 @@
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
+class MenuTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var channels = ["NTV Kenya", "KTN News", "K24 TV", "Citizen TV", "KBC News"]
+    var channels = [String]()
+    
+    @IBOutlet var menuTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        menuTableView.delegate = self
+        menuTableView.dataSource = self
+        
+        channels = ["NTV Kenya", "KTN News", "K24 TV", "Citizen TV", "KBC News"]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -36,12 +42,12 @@ class MenuTableViewController: UITableViewController {
     }
     */
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return channels.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         cell.textLabel?.text = channels[indexPath.row]
@@ -49,13 +55,15 @@ class MenuTableViewController: UITableViewController {
         return cell
     }
 
+    // MARK: Pass Values By Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationVC = segue.destinationViewController as! NewsFeedViewController
-        if let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow! {
-            print("hello")
-            destinationVC.currentChannel = indexPath.row
+        if let navVC = segue.destinationViewController as? UINavigationController {
+            if let destVC = navVC.viewControllers.first as? NewsFeedViewController {
+                if let indexPath = menuTableView.indexPathForSelectedRow {
+                    destVC.currentChannel = indexPath.row
+                }
+            }
         }
-        
     }
     
     /*

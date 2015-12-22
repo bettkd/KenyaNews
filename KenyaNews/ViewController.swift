@@ -43,21 +43,34 @@ class ViewController: UIViewController, HolderViewDelegate {
     view.backgroundColor = Colors.blue
 
     // 2
-    let label: UILabel = UILabel(frame: view.frame)
-    label.textColor = Colors.white
-    label.font = UIFont(name: "HelveticaNeue-Thin", size: 48.0)
-    label.textAlignment = NSTextAlignment.Center
-    label.text = "Kenya News"
-    label.transform = CGAffineTransformScale(label.transform, 0.25, 0.25)
-    view.addSubview(label)
+    let screen = UIScreen.mainScreen().bounds
+    let lblWelcome: UILabel = UILabel(frame: CGRectMake(0,0,screen.width,50))
+    lblWelcome.center = CGPointMake(screen.width/2, screen.height/2 - 50)
+    lblWelcome.textColor = Colors.white
+    lblWelcome.font = UIFont(name: "HelveticaNeue-Thin", size: 48.0)
+    lblWelcome.textAlignment = NSTextAlignment.Center
+    lblWelcome.text = "Kenya News"
+    //label.sizeToFit()
+    lblWelcome.transform = CGAffineTransformScale(lblWelcome.transform, 0.25, 0.25)
+    view.addSubview(lblWelcome)
 
     // 3
     UIView.animateWithDuration(1.0, delay: 0.2, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut,
       animations: ({
-        label.transform = CGAffineTransformScale(label.transform, 4.0, 4.0)
+        lblWelcome.transform = CGAffineTransformScale(lblWelcome.transform, 4.0, 4.0)
       }), completion: { finished in
         self.addButton()
     })
+    
+    // 4
+    let lblTap: UILabel = UILabel(frame: CGRectMake(0,0,screen.width,50))
+    lblTap.center = CGPointMake(screen.width/2, screen.height/2 + 50)
+    lblTap.textColor = Colors.white
+    lblTap.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
+    lblTap.textAlignment = NSTextAlignment.Center
+    lblTap.text = "Tap anywhere to continue.."
+    //lblTap.transform = CGAffineTransformScale(lblWelcome.transform, 0.25, 0.25)
+    view.addSubview(lblTap)
   }
   
   func addButton() {
@@ -75,5 +88,12 @@ class ViewController: UIViewController, HolderViewDelegate {
     //holderView = HolderView(frame: CGRectZero)
     //addHolderView()
   }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let myActivityIndicator = UIActivityIndicatorView( activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        myActivityIndicator.center = view.center
+        myActivityIndicator.startAnimating()
+        view.addSubview(myActivityIndicator)
+    }
 }
 

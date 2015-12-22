@@ -15,7 +15,6 @@
 		8B2139611C27DF0C00096B45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2139601C27DF0C00096B45 /* Main.storyboard */; };
 		8B2139631C27DF3D00096B45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2139621C27DF3D00096B45 /* LaunchScreen.storyboard */; };
 		8B2139651C27DF4F00096B45 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139641C27DF4F00096B45 /* NewsFeedTableViewCell.swift */; };
-		8B2139671C27DF6C00096B45 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139661C27DF6C00096B45 /* MenuViewController.swift */; };
 		8B21396B1C27E00700096B45 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139691C27E00700096B45 /* SWRevealViewController.m */; };
 		8B2139761C28F10100096B45 /* OvalLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139711C28F10100096B45 /* OvalLayer.swift */; };
 		8B2139771C28F10100096B45 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139721C28F10100096B45 /* TriangleLayer.swift */; };
@@ -40,7 +39,6 @@
 		8B2139601C27DF0C00096B45 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8B2139621C27DF3D00096B45 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B2139641C27DF4F00096B45 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
-		8B2139661C27DF6C00096B45 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8B2139681C27E00700096B45 /* KenyaNews-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KenyaNews-Bridging-Header.h"; sourceTree = "<group>"; };
 		8B2139691C27E00700096B45 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8B21396A1C27E00700096B45 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				8B2139601C27DF0C00096B45 /* Main.storyboard */,
 				8B21394A1C27DE0900096B45 /* NewsFeedViewController.swift */,
 				8B2139641C27DF4F00096B45 /* NewsFeedTableViewCell.swift */,
-				8B2139661C27DF6C00096B45 /* MenuViewController.swift */,
 				8B21395C1C27DED900096B45 /* MenuTableViewController.swift */,
 				8B21394F1C27DE0900096B45 /* Assets.xcassets */,
 				8B2139801C28F1AC00096B45 /* Launch Screen */,
@@ -299,7 +296,6 @@
 				8B2139781C28F10100096B45 /* RectangleLayer.swift in Sources */,
 				8B2139771C28F10100096B45 /* TriangleLayer.swift in Sources */,
 				8B2139791C28F10100096B45 /* ArcLayer.swift in Sources */,
-				8B2139671C27DF6C00096B45 /* MenuViewController.swift in Sources */,
 				8B21397F1C28F19400096B45 /* Colors.swift in Sources */,
 				8B21395B1C27DECE00096B45 /* ChannelVideo.swift in Sources */,
 				8B21394B1C27DE0900096B45 /* NewsFeedViewController.swift in Sources */,
