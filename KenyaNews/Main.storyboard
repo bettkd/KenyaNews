@@ -161,7 +161,7 @@
                                         <rect key="frame" x="0.0" y="92" width="309" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gJG-rP-aed" id="gPv-eY-XBF">
-                                            <rect key="frame" x="0.0" y="0.0" width="309" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="309" height="143.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-2B-He5">
@@ -236,7 +236,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dqs-yy-19b">
                                 <rect key="frame" x="5" y="64" width="309" height="154"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ph-NS-X9X" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ph-NS-X9X" customClass="YouTubePlayerView" customModule="Swift_YouTube_Player">
                                         <rect key="frame" x="34" y="3" width="240" height="147"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>

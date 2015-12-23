@@ -8,7 +8,7 @@
 
 import UIKit
 
-import YouTubePlayer
+import Swift_YouTube_Player
 
 class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -196,63 +196,10 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     
     @IBAction func playVideo(sender: UIButton){
         let video:ChannelVideo = videos[sender.tag]
-        let videoUrl = "https://www.youtube.com/" + video.videoID + "?rel=0&autoplay=1&controls=0&showinfo=0&autohide=1"
-        //let code = "<iframe id=\"player\" type=\"text/html\" width=\"100%\" height=\"100%\" src=\(videoUrl) frameborder=\"0\" allowfullscreen></iframe>"
-        //let width = UIScreen.mainScreen().bounds.width
-        ///let height = UIScreen.mainScreen().bounds.height
-        //let youTubeWebView = UIWebView(frame: CGRectMake(20, 120, width - 40, height-500))
-        //youTubeWebView.mediaPlaybackRequiresUserAction = false
-        //self.view.addSubview(youTubeWebView)
-        //youTubeWebView.loadHTMLString(code, baseURL: NSBundle.mainBundle().resourceURL)
-        
-        print("reached here")
-        
         
         // Load video from YouTube ID
         self.videoPlayer.playerVars = ["playsinline": "1"]
         self.videoPlayer.loadVideoID(video.videoID)
-        
-        /*
-        if videoPlayer.ready {
-            if videoPlayer.playerState != YouTubePlayerState.Playing {
-                videoPlayer.play()
-            } else {
-                videoPlayer.pause()
-            }
-        }
-        
-        // Load video from YouTube URL
-        ///let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=wQg3bXrVLtg?rel=0&autoplay=1")
-        //videoPlayer.loadVideoURL(myVideoURL!)
-        //if videoPlayer.ready {
-        //    videoPlayer.play()
-        //}
-        
-        //let playerVars:NSDictionary = ["controls":0, "playsinline":0, "autohide":1, "showinfo":0, "modestbranding":1]
-        
-        //videoPlayer.loadWithVideoId("Rg6GLVUnnpM")
-        
-        //videoPlayer.seekToSeconds(0.0, allowSeekAhead: true)
-        
-        //videoPlayer.playVideo()
-        
-        //print(playerVars)
-        
-        //videoPlayer.loadVideoById(video.videoID, startSeconds: 0.0, suggestedQuality: .Default)
-        //sleep(5)
-        //if videoPlayer.playerState().rawValue == 1 {
-        //    videoPlayer.playVideo()
-        //}
-        //videoPlayer.loadVideoByURL(videoUrl, startSeconds: 0.0, suggestedQuality: .Default)
-        //videoPlayer.l
-        print("just one more")
-        //videoPlayer.playVideo()
-        
-        print (videoUrl)
-        //playerView.loadVideoByURL(videoUrl, startSeconds: 0.0, suggestedQuality: .Auto)
-        //playerView.playVideo()
-        */
-        
     }
     
 }
