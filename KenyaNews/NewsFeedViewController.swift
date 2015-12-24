@@ -59,7 +59,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
             let success:Bool = parser.parse()
             
             if success {
-                print("parse success!")
+                print("success loading!")
                 videos = videos.sort({$0.views > $1.views})
             } else {
                 print("parse failure!")
@@ -191,6 +191,12 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         cell.lblViews.text = "👁 \(data.views)"
         cell.lblTitle.text = data.title
         cell.txtDescription.text = data.summary
+        
+        // Show content from the top
+        cell.txtDescription.contentOffset.y = (0 - cell.txtDescription.contentSize.height / 2)
+        cell.txtDescription.scrollEnabled = false
+        cell.txtDescription.layoutIfNeeded()
+        cell.txtDescription.scrollEnabled = true
         
         cell.btnPlayVideo.tag = indexPath.row
         cell.btnPlayVideo.addTarget(self, action: "playVideo:", forControlEvents: .TouchUpInside)

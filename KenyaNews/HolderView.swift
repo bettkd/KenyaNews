@@ -107,7 +107,7 @@ class HolderView: UIView {
       frame.size.height + blueRectangleLayer.lineWidth * 2)
     layer.sublayers = nil
 
-    UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+    UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
       self.frame = self.parentFrame
       }, completion: { finished in
         self.addLabel()

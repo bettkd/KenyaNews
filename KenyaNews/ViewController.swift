@@ -55,11 +55,13 @@ class ViewController: UIViewController, HolderViewDelegate {
     view.addSubview(lblWelcome)
 
     // 3
-    UIView.animateWithDuration(1.0, delay: 0.2, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut,
+    UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.2, options: UIViewAnimationOptions.CurveEaseInOut,
       animations: ({
         lblWelcome.transform = CGAffineTransformScale(lblWelcome.transform, 4.0, 4.0)
       }), completion: { finished in
-        self.addButton()
+        
+        self.performSegueWithIdentifier("openApp", sender: self)
+        //self.addButton()
     })
     
     // 4
@@ -68,11 +70,12 @@ class ViewController: UIViewController, HolderViewDelegate {
     lblTap.textColor = Colors.white
     lblTap.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
     lblTap.textAlignment = NSTextAlignment.Center
-    lblTap.text = "Tap anywhere to continue.."
+    lblTap.text = "Loading news..."
     //lblTap.transform = CGAffineTransformScale(lblWelcome.transform, 0.25, 0.25)
     view.addSubview(lblTap)
   }
   
+    /* Load the main page directly
   func addButton() {
     let button = UIButton()
     button.frame = CGRectMake(0.0, 0.0, view.bounds.width, view.bounds.height)
@@ -88,6 +91,7 @@ class ViewController: UIViewController, HolderViewDelegate {
     //holderView = HolderView(frame: CGRectZero)
     //addHolderView()
   }
+    */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let myActivityIndicator = UIActivityIndicatorView( activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)

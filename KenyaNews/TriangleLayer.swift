@@ -67,7 +67,7 @@ class TriangleLayer: CAShapeLayer {
     triangleAnimationLeft.fromValue = trianglePathSmall.CGPath
     triangleAnimationLeft.toValue = trianglePathLeftExtension.CGPath
     triangleAnimationLeft.beginTime = 0.0
-    triangleAnimationLeft.duration = 0.3
+    triangleAnimationLeft.duration = 0.2
 
     let triangleAnimationRight: CABasicAnimation = CABasicAnimation(keyPath: "path")
     triangleAnimationRight.fromValue = trianglePathLeftExtension.CGPath

@@ -10,7 +10,7 @@ import UIKit
 
 class ArcLayer: CAShapeLayer {
   
-  let animationDuration: CFTimeInterval = 0.18
+  let animationDuration: CFTimeInterval = 0.05
   
   override init() {
     super.init()

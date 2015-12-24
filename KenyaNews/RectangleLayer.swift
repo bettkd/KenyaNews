@@ -37,7 +37,7 @@ class RectangleLayer: CAShapeLayer {
     let strokeAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
     strokeAnimation.fromValue = 0.0
     strokeAnimation.toValue = 1.0
-    strokeAnimation.duration = 0.4
+    strokeAnimation.duration = 0.3
     addAnimation(strokeAnimation, forKey: nil)
   }
 }
