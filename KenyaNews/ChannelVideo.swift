@@ -15,13 +15,15 @@ class ChannelVideo: NSObject {
     var published:String
     var thumbnail:UIImage
     var videoID:String
+    var views:Int
     
-    init(title:String, summary:String, published:String, thumbnail:UIImage, videoURL:String) {
+    init(title:String, summary:String, published:String, thumbnail:UIImage, videoURL:String, views:Int) {
         self.title = title
         self.summary = summary
         self.published = published
         self.thumbnail = thumbnail
         self.videoID = videoURL
+        self.views = views
     }
     
     override init() {
@@ -30,5 +32,6 @@ class ChannelVideo: NSObject {
         published = ""
         thumbnail = UIImage()
         videoID = ""
+        views = 0
     }
 }

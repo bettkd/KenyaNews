@@ -60,6 +60,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
             
             if success {
                 print("parse success!")
+                videos = videos.sort({$0.views > $1.views})
             } else {
                 print("parse failure!")
             }
@@ -80,13 +81,12 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     
     //MARK: Parser start of element
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        if(elementName=="media:title" || elementName=="media:description" || elementName=="yt:videoId" || elementName=="published" || elementName=="media:thumbnail"){
+        if(elementName=="media:title" || elementName=="media:description" || elementName=="yt:videoId" || elementName=="published" || elementName=="media:thumbnail" || elementName == "media:statistics"){
             if(elementName=="media:title"){ vtitle = true }
             if(elementName=="media:description"){ vsummary = true }
             if(elementName=="published"){ vpublished = true }
             if(elementName=="yt:videoId"){ vID = true}
-            if(elementName=="media:thumbnail")
-            {
+            if(elementName=="media:thumbnail") {
                 imageForImageURLString(attributeDict["url"]!) { (image, success) -> Void in
                     if success {
                         self.video.thumbnail = image!
@@ -95,12 +95,19 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
                     }
                 }
             }
+            if(elementName=="media:statistics") {
+                self.video.views = Int(attributeDict["views"]!)!
+                
+                //Add video at the end of last element
+                videos.append(video) // Appends at the end
+                video = ChannelVideo()
+            }
         }
     }
     
     // MARK: Parser end of element
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if(elementName=="media:title" || elementName=="media:description" || elementName=="yt:videoId" || elementName=="published" || elementName=="media:thumbnail"){
+        if(elementName=="media:title" || elementName=="media:description" || elementName=="yt:videoId" || elementName=="published"){
             if(elementName=="media:title"){
                 video.title = _title
                 _title = ""
@@ -108,10 +115,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
             }
             if(elementName=="media:description")
             {
-                //Add video at the end
                 video.summary = _summary
-                videos.append(video) // Appends at the end
-                video = ChannelVideo()
                 _summary = ""
                 vsummary = false
             }
@@ -184,6 +188,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         
         cell.imgThumbnail.image = data.thumbnail
         cell.lblDate.text = data.published
+        cell.lblViews.text = "👁 \(data.views)"
         cell.lblTitle.text = data.title
         cell.txtDescription.text = data.summary
         
