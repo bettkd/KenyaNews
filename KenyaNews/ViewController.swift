@@ -46,10 +46,10 @@ class ViewController: UIViewController, HolderViewDelegate {
     let screen = UIScreen.mainScreen().bounds
     let lblWelcome: UILabel = UILabel(frame: CGRectMake(0,0,screen.width,56))
     lblWelcome.center = CGPointMake(screen.width/2, screen.height/2 - 50)
-    lblWelcome.textColor = Colors.red
-    lblWelcome.font = UIFont(name: "HelveticaNeue", size: 48.0)
-    lblWelcome.shadowColor = Colors.white
-    lblWelcome.shadowOffset = CGSizeMake(0.25, 0.25)
+    lblWelcome.textColor = Colors.white
+    lblWelcome.font = UIFont(name: "Optima", size: 48.0)
+    lblWelcome.shadowColor = UIColor.grayColor()
+    lblWelcome.shadowOffset = CGSizeMake(1, 1)
     lblWelcome.textAlignment = NSTextAlignment.Center
     lblWelcome.text = "Kenya News"
     //label.sizeToFit()
