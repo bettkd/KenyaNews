@@ -14,7 +14,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     
     var url:String!
     let urlRoot:String="https://www.youtube.com/feeds/videos.xml?channel_id="
-    var _channels:[String:String] = ["NTV Kenya" : "UCekTpzKodObpOcmvVCFUvTw", "KTN News": "UCKVsdeoHExltrWMuK0hOWmg", "K24 TV": "UCt3SE-Mvs3WwP7UW-PiFdqQ", "Citizen TV": "UChBQgieUidXV1CmDxSdRm3g", "KBC News": "UCypNjM5hP1qcUqQZe57jNfg"]
+    var _channels:[String:String] = ["NTV Kenya":"UCekTpzKodObpOcmvVCFUvTw", "KTN News":"UCKVsdeoHExltrWMuK0hOWmg", "K24 TV":"UCt3SE-Mvs3WwP7UW-PiFdqQ", "Citizen TV":"UChBQgieUidXV1CmDxSdRm3g", "KBC News":"UCypNjM5hP1qcUqQZe57jNfg", "Capital News":"UCsURxs8Kz_qzezpicj-STyw"]
     var currentChannel = "NTV Kenya"
     
     var vtitle:Bool = false
@@ -60,6 +60,9 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
             
             if success {
                 print("success loading!")
+                //Load only the most recent 10 videos
+                videos = [ChannelVideo](videos.dropLast(5))
+                // Sort by number of views
                 videos = videos.sort({$0.views > $1.views})
             } else {
                 print("parse failure!")

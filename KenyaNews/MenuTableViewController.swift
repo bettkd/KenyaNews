@@ -20,7 +20,7 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
         menuTableView.delegate = self
         menuTableView.dataSource = self
         
-        channels = ["NTV Kenya", "KTN News", "K24 TV", "Citizen TV", "KBC News"]
+        channels = ["NTV Kenya", "KTN News", "K24 TV", "Citizen TV", "KBC News", "Capital News"]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
