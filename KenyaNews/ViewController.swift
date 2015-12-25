@@ -44,10 +44,12 @@ class ViewController: UIViewController, HolderViewDelegate {
 
     // 2
     let screen = UIScreen.mainScreen().bounds
-    let lblWelcome: UILabel = UILabel(frame: CGRectMake(0,0,screen.width,50))
+    let lblWelcome: UILabel = UILabel(frame: CGRectMake(0,0,screen.width,56))
     lblWelcome.center = CGPointMake(screen.width/2, screen.height/2 - 50)
-    lblWelcome.textColor = Colors.white
-    lblWelcome.font = UIFont(name: "HelveticaNeue-Thin", size: 48.0)
+    lblWelcome.textColor = Colors.red
+    lblWelcome.font = UIFont(name: "HelveticaNeue", size: 48.0)
+    lblWelcome.shadowColor = Colors.white
+    lblWelcome.shadowOffset = CGSizeMake(0.25, 0.25)
     lblWelcome.textAlignment = NSTextAlignment.Center
     lblWelcome.text = "Kenya News"
     //label.sizeToFit()
@@ -73,6 +75,16 @@ class ViewController: UIViewController, HolderViewDelegate {
     lblTap.text = "Loading news..."
     //lblTap.transform = CGAffineTransformScale(lblWelcome.transform, 0.25, 0.25)
     view.addSubview(lblTap)
+    
+    // 5
+    let lblCredits: UILabel = UILabel(frame: CGRectMake(0,0,screen.width,50))
+    lblCredits.center = CGPointMake(screen.width/2, screen.height - 50)
+    lblCredits.textColor = Colors.white
+    lblCredits.font = UIFont(name: "HelveticaNeue-Thin", size: 12)
+    lblCredits.textAlignment = NSTextAlignment.Center
+    lblCredits.text = "Dominic Bett © 2015"
+    //lblTap.transform = CGAffineTransformScale(lblWelcome.transform, 0.25, 0.25)
+    view.addSubview(lblCredits)
   }
   
     /* Load the main page directly
