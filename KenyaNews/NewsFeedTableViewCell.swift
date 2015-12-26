@@ -14,8 +14,8 @@ class NewsFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var lblDate: UILabel! = UILabel()
     @IBOutlet var lblViews: UILabel! = UILabel()
     @IBOutlet weak var lblTitle: UILabel! = UILabel()
-    //@IBOutlet weak var txtDescription: UITextView! = UITextView()
-    //@IBOutlet weak var btnPlayVideo: UIButton!
+    @IBOutlet weak var txtDescription: UITextView! = UITextView()
+    @IBOutlet weak var btnPlayVideo: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
