@@ -9,18 +9,20 @@
 import Swift_YouTube_Player
 import iAd
 
-class VideoViewController: UIViewController, ADBannerViewDelegate {
+class VideoViewController: UIViewController, YouTubePlayerDelegate, ADBannerViewDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate // Reference to the AppDelegate
     
     
     var video: ChannelVideo = ChannelVideo()
     
-    @IBOutlet var videoPlayer: YouTubePlayerView!
-    @IBOutlet var lblTitle: UILabel!
-    @IBOutlet var lblViews: UILabel!
-    @IBOutlet var lblDate: UILabel!
-    @IBOutlet var txtDescription: UITextView!
+    var expandedView = false
+    
+    @IBOutlet var videoPlayer: YouTubePlayerView! = YouTubePlayerView()
+    @IBOutlet var lblTitle: UILabel! = UILabel()
+    @IBOutlet var lblViews: UILabel! = UILabel()
+    @IBOutlet var lblDate: UILabel! = UILabel()
+    @IBOutlet var txtDescription: UITextView! = UITextView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +36,42 @@ class VideoViewController: UIViewController, ADBannerViewDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         
         // Load  Video
+        //self.videoPlayer.clear()
+        videoPlayer.delegate = self
         self.videoPlayer.playerVars = ["playsinline": "1"]
         self.videoPlayer.loadVideoID(video.videoID)
-        self.videoPlayer.play()
         
         self.lblTitle.text = video.title
         self.lblViews.text = "👁 \(video.views)"
         self.lblDate.text = video.published
         self.txtDescription.text = video.summary
+    }
+    
+    func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        print("changed")
+    }
+    
+    func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+        if videoPlayer.frame.origin == CGPointMake(0.0, 64.0) {
+            expandedView = true
+        }
+        if expandedView {
+            let frame = CGRectMake(0.0, 0.0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.width * (195/320))
+            self.videoPlayer.clear()
+            self.videoPlayer.frame = frame
+            self.videoPlayer.contentMode = UIViewContentMode.ScaleAspectFill
+            self.view.addSubview(videoPlayer)
+            expandedView = false
+        }
+    }
+    
+    func playerReady(videoPlayer: YouTubePlayerView) {
+        print("ready")
+        
+        self.videoPlayer.play()
     }
     
     // MARK: Funtion to load iAds

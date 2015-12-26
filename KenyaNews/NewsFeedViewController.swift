@@ -204,7 +204,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath: NSIndexPath = videosTableView.indexPathForSelectedRow {
-            if let destVC:VideoViewController = segue.destinationViewController as? VideoViewController{
+            if let destVC:VideoViewController = segue.destinationViewController as? VideoViewController {
                 destVC.video = videos[indexPath.row]
             }
         }
