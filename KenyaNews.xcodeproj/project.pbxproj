@@ -23,11 +23,6 @@
 		8B21397A1C28F10100096B45 /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139751C28F10100096B45 /* HolderView.swift */; };
 		8B21397F1C28F19400096B45 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B21397E1C28F19400096B45 /* Colors.swift */; };
 		8B2139821C28F31C00096B45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139811C28F31C00096B45 /* ViewController.swift */; };
-		8B6DD30C1C2DBDB2002287BF /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6DD30B1C2DBDB2002287BF /* VideoViewController.swift */; };
-		8B6DD30E1C2E2F4E002287BF /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6DD30D1C2E2F4E002287BF /* iAd.framework */; };
-		8B6DD3101C2E2F5B002287BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6DD30F1C2E2F5B002287BF /* UIKit.framework */; };
-		8B6DD3121C2E2F65002287BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6DD3111C2E2F65002287BF /* Foundation.framework */; };
-		8B6DD3141C2E2F71002287BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6DD3131C2E2F71002287BF /* CoreGraphics.framework */; };
 		BD5F1B7D8D9526A8961A691B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48700F6B6F961221A4156252 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,11 +49,6 @@
 		8B2139751C28F10100096B45 /* HolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
 		8B21397E1C28F19400096B45 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8B2139811C28F31C00096B45 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8B6DD30B1C2DBDB2002287BF /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		8B6DD30D1C2E2F4E002287BF /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		8B6DD30F1C2E2F5B002287BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		8B6DD3111C2E2F65002287BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8B6DD3131C2E2F71002287BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8FE8DC8B8E9520938233D9F2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,10 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B6DD3141C2E2F71002287BF /* CoreGraphics.framework in Frameworks */,
-				8B6DD3121C2E2F65002287BF /* Foundation.framework in Frameworks */,
-				8B6DD3101C2E2F5B002287BF /* UIKit.framework in Frameworks */,
-				8B6DD30E1C2E2F4E002287BF /* iAd.framework in Frameworks */,
 				BD5F1B7D8D9526A8961A691B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,10 +67,6 @@
 		59539881736DF6AD527676F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8B6DD3131C2E2F71002287BF /* CoreGraphics.framework */,
-				8B6DD3111C2E2F65002287BF /* Foundation.framework */,
-				8B6DD30F1C2E2F5B002287BF /* UIKit.framework */,
-				8B6DD30D1C2E2F4E002287BF /* iAd.framework */,
 				48700F6B6F961221A4156252 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -115,7 +97,6 @@
 				8B21395A1C27DECE00096B45 /* ChannelVideo.swift */,
 				8B2139601C27DF0C00096B45 /* Main.storyboard */,
 				8B21394A1C27DE0900096B45 /* NewsFeedViewController.swift */,
-				8B6DD30B1C2DBDB2002287BF /* VideoViewController.swift */,
 				8B2139641C27DF4F00096B45 /* NewsFeedTableViewCell.swift */,
 				8B21395C1C27DED900096B45 /* MenuTableViewController.swift */,
 				8B21394F1C27DE0900096B45 /* Assets.xcassets */,
@@ -315,7 +296,6 @@
 				8B2139781C28F10100096B45 /* RectangleLayer.swift in Sources */,
 				8B2139771C28F10100096B45 /* TriangleLayer.swift in Sources */,
 				8B2139791C28F10100096B45 /* ArcLayer.swift in Sources */,
-				8B6DD30C1C2DBDB2002287BF /* VideoViewController.swift in Sources */,
 				8B21397F1C28F19400096B45 /* Colors.swift in Sources */,
 				8B21395B1C27DECE00096B45 /* ChannelVideo.swift in Sources */,
 				8B21394B1C27DE0900096B45 /* NewsFeedViewController.swift in Sources */,

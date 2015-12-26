@@ -14,7 +14,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     
     var url:String!
     let urlRoot:String="https://www.youtube.com/feeds/videos.xml?channel_id="
-    var _channels:[String:String] = ["NTV Kenya":"UCekTpzKodObpOcmvVCFUvTw", "KTN News":"UCKVsdeoHExltrWMuK0hOWmg", "K24 TV":"UCt3SE-Mvs3WwP7UW-PiFdqQ", "Citizen TV":"UChBQgieUidXV1CmDxSdRm3g", "KBC News":"UCypNjM5hP1qcUqQZe57jNfg", "Capital News":"UCsURxs8Kz_qzezpicj-STyw", "QTV Kenya": "UCqBJ47FjJcl61fmSbcadAVg", "Kass International":"UCBe0vbKt2uFu_4NeyZ7Uy1A", "Ebru Africa TV":"UCdYjYt4YGhEbCGMv1fbv0pg", "East Africa TV": "UCyYzMKBalg6jMVNuC-JRMog", "Family TV Kenya": "UCaezQJtBqkyuNFN8bGmBeMQ", "Pwani TV": "UCyNxk1YI_zf5sQjf-QSzYCg"]
+    var _channels:[String:String] = ["NTV Kenya":"UCekTpzKodObpOcmvVCFUvTw", "KTN News":"UCKVsdeoHExltrWMuK0hOWmg", "K24 TV":"UCt3SE-Mvs3WwP7UW-PiFdqQ", "Citizen TV":"UChBQgieUidXV1CmDxSdRm3g", "KBC News":"UCypNjM5hP1qcUqQZe57jNfg", "Capital News":"UCsURxs8Kz_qzezpicj-STyw"]
     var currentChannel = "NTV Kenya"
     
     var vtitle:Bool = false
@@ -24,8 +24,6 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     var _summary = ""
     var _title = ""
     
-    var feeds = 10 // Limits number of feeds to 8
-    
     var parser = NSXMLParser()
     var video = ChannelVideo()
     var videos = [ChannelVideo]()
@@ -33,10 +31,12 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     
     @IBOutlet weak var videosTableView: UITableView!
     @IBOutlet weak var btnRevealMenu: UIBarButtonItem!
+    @IBOutlet var videoPlayer: YouTubePlayerView!
+    //let playerFrame:CGRect = CGRect(origin: CGPoint(x: 0, y: 0), size: UIScreen.mainScreen().bounds.size)
+    //var videoPlayer:YouTubePlayerView = YouTubePlayerView(playerFrame)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.title = currentChannel
         
         videosTableView.delegate = self
@@ -60,7 +60,8 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
             
             if success {
                 print("success loading!")
-                
+                //Load only the most recent 10 videos
+                videos = [ChannelVideo](videos.dropLast(5))
                 // Sort by number of views
                 videos = videos.sort({$0.views > $1.views})
             } else {
@@ -68,6 +69,9 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
             }
         }
 
+        
+        self.videoPlayer.playerVars = ["playsinline": "1"]
+        videoPlayer.loadVideoID(videos[0].videoID)
     }
     
     
@@ -76,20 +80,10 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.tintColor = Colors.white
-        if let font = UIFont(name: "HelveticaNeue", size: 12) {
-            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font]
-            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: Colors.white]
-        }
-    }
 
     
     //MARK: Parser start of element
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        
-        if feeds < 1 { return }
-        
         if(elementName=="media:title" || elementName=="media:description" || elementName=="yt:videoId" || elementName=="published" || elementName=="media:thumbnail" || elementName == "media:statistics"){
             if(elementName=="media:title"){ vtitle = true }
             if(elementName=="media:description"){ vsummary = true }
@@ -110,8 +104,6 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
                 //Add video at the end of last element
                 videos.append(video) // Appends at the end
                 video = ChannelVideo()
-                
-                feeds -= 1
             }
         }
     }
@@ -145,6 +137,9 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
             _title += data
         }
         if(vsummary){
+            //var data = data.stringByReplacingOccurrencesOfString("\\n", withString: "")
+            //let data = data.stringByReplacingOccurrencesOfString("\"", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            //print(data)
             _summary += data
         }
         if(vpublished){
@@ -198,16 +193,27 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         cell.lblDate.text = data.published
         cell.lblViews.text = "👁 \(data.views)"
         cell.lblTitle.text = data.title
+        cell.txtDescription.text = data.summary
+        
+        // Show content from the top
+        cell.txtDescription.contentOffset.y = (0 - cell.txtDescription.contentSize.height / 2)
+        cell.txtDescription.scrollEnabled = false
+        cell.txtDescription.layoutIfNeeded()
+        cell.txtDescription.scrollEnabled = true
+        
+        cell.btnPlayVideo.tag = indexPath.row
+        cell.btnPlayVideo.addTarget(self, action: "playVideo:", forControlEvents: .TouchUpInside)
+        
         
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let indexPath: NSIndexPath = videosTableView.indexPathForSelectedRow {
-            if let destVC:VideoViewController = segue.destinationViewController as? VideoViewController{
-                destVC.video = videos[indexPath.row]
-            }
-        }
+    @IBAction func playVideo(sender: UIButton){
+        let video:ChannelVideo = videos[sender.tag]
+        
+        // Load video from YouTube ID
+        self.videoPlayer.playerVars = ["playsinline": "1"]
+        self.videoPlayer.loadVideoID(video.videoID)
     }
     
 }
