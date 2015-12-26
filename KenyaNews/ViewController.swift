@@ -82,7 +82,7 @@ class ViewController: UIViewController, HolderViewDelegate {
     lblCredits.textColor = Colors.white
     lblCredits.font = UIFont(name: "HelveticaNeue-Thin", size: 12)
     lblCredits.textAlignment = NSTextAlignment.Center
-    lblCredits.text = "Dominic Bett © 2015"
+    lblCredits.text = "Dominic Bett © 2016"
     //lblTap.transform = CGAffineTransformScale(lblWelcome.transform, 0.25, 0.25)
     view.addSubview(lblCredits)
   }
@@ -110,6 +110,8 @@ class ViewController: UIViewController, HolderViewDelegate {
         myActivityIndicator.center = view.center
         myActivityIndicator.startAnimating()
         view.addSubview(myActivityIndicator)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
