@@ -62,9 +62,6 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
             
             if success {
                 print("success loading!")
-                
-                // Sort by number of views
-                videos = videos.sort({$0.views > $1.views})
             } else {
                 print("parse failure!")
             }
@@ -214,14 +211,14 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     }
 
     @IBAction func btnRecent(sender: AnyObject) {
-        videos = videos.sort({$0.views > $1.views})
+        videos = videos.sort({$0.published > $1.published})
         videosTableView.reloadData()
         self._btnRecent.alpha = 0.8
         self._btnViews.alpha = 1.0
     }
     
     @IBAction func btnViews(sender: AnyObject) {
-        videos = videos.sort({$0.published > $1.published})
+        videos = videos.sort({$0.views > $1.views})
         videosTableView.reloadData()
         self._btnRecent.alpha = 1.0
         self._btnViews.alpha = 0.8
