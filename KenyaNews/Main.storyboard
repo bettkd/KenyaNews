@@ -281,7 +281,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kenya News" id="Vef-XE-kkF">
-                        <barButtonItem key="leftBarButtonItem" tag="1" image="show" id="KDE-PS-tVL">
+                        <barButtonItem key="leftBarButtonItem" tag="1" image="menu" id="KDE-PS-tVL">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -387,7 +387,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="show" width="22" height="22"/>
+        <image name="menu" width="36" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Adb-kp-Qm9"/>
