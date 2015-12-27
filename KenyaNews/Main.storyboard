@@ -236,7 +236,7 @@
                                         <rect key="frame" x="161" y="1" width="158" height="27"/>
                                         <color key="backgroundColor" red="0.18039215689999999" green="0.45882352939999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
-                                        <state key="normal" title="Views">
+                                        <state key="normal" title="Popular">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
