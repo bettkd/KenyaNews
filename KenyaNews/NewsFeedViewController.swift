@@ -195,8 +195,9 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         let data:ChannelVideo = videos[indexPath.row]
         
         cell.imgThumbnail.image = data.thumbnail
+        cell.imgThumbnail.layer.cornerRadius = 3.0
         cell.lblDate.text = data.published
-        cell.lblViews.text = "👁 \(data.views)"
+        cell.lblViews.text = "\(data.views) Views"
         cell.lblTitle.text = data.title
         
         return cell

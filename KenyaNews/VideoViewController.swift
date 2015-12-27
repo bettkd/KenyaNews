@@ -46,6 +46,7 @@ class VideoViewController: UIViewController, YouTubePlayerDelegate, ADBannerView
         self.lblViews.text = "👁 \(video.views)"
         self.lblDate.text = video.published
         self.txtDescription.text = video.summary
+        self.txtDescription.setContentOffset(CGPointZero, animated: true)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -54,7 +55,7 @@ class VideoViewController: UIViewController, YouTubePlayerDelegate, ADBannerView
     
     override func viewWillDisappear(animated: Bool) {
         self.appDelegate.adBannerView.removeFromSuperview()
-        self.videoPlayer.removeFromSuperview()
+        self.videoPlayer.stop()
     }
     
     func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
