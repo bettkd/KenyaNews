@@ -293,10 +293,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="X6S-wE-pbl">
-                                <rect key="frame" x="7" y="338" width="303" height="222"/>
+                                <rect key="frame" x="7" y="338" width="303" height="180"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="222" id="Ttl-RN-j83"/>
+                                    <constraint firstAttribute="height" constant="180" id="Ttl-RN-j83"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -309,7 +309,7 @@
                             <constraint firstItem="2Lm-kQ-Ghl" firstAttribute="baseline" secondItem="xuQ-TJ-8IG" secondAttribute="baseline" id="6hR-kK-A2U"/>
                             <constraint firstItem="2Ph-NS-X9X" firstAttribute="leading" secondItem="Qhk-cA-Bkk" secondAttribute="leading" id="9Al-Lf-ORT"/>
                             <constraint firstItem="zJT-sg-tcC" firstAttribute="trailing" secondItem="2Lm-kQ-Ghl" secondAttribute="trailing" id="C4q-pf-utz"/>
-                            <constraint firstItem="6cG-7g-QcG" firstAttribute="top" secondItem="X6S-wE-pbl" secondAttribute="bottom" constant="8" id="E0P-Lz-oYL"/>
+                            <constraint firstItem="6cG-7g-QcG" firstAttribute="top" secondItem="X6S-wE-pbl" secondAttribute="bottom" constant="50" id="E0P-Lz-oYL"/>
                             <constraint firstItem="zJT-sg-tcC" firstAttribute="leading" secondItem="xuQ-TJ-8IG" secondAttribute="leading" id="HZC-PK-pww"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Lm-kQ-Ghl" secondAttribute="trailing" constant="-6" id="OhD-Q8-I46"/>
                             <constraint firstItem="zJT-sg-tcC" firstAttribute="top" secondItem="xuQ-TJ-8IG" secondAttribute="bottom" constant="7" id="TGb-qI-hFv"/>

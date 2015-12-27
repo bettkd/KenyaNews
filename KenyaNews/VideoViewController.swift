@@ -26,8 +26,6 @@ class VideoViewController: UIViewController, YouTubePlayerDelegate, ADBannerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadAds()
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,12 +47,22 @@ class VideoViewController: UIViewController, YouTubePlayerDelegate, ADBannerView
         self.lblDate.text = video.published
         self.txtDescription.text = video.summary
     }
+
+    override func viewDidAppear(animated: Bool) {
+        loadAds()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.appDelegate.adBannerView.removeFromSuperview()
+        self.videoPlayer.removeFromSuperview()
+    }
     
     func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
-        print("changed")
+        print("player state \(playerState)")
     }
     
     func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+        print("plaback quality \(playbackQuality)")
         if videoPlayer.frame.origin == CGPointMake(0.0, 64.0) {
             expandedView = true
         }
@@ -69,7 +77,7 @@ class VideoViewController: UIViewController, YouTubePlayerDelegate, ADBannerView
     }
     
     func playerReady(videoPlayer: YouTubePlayerView) {
-        print("ready")
+        print("ready to play")
         
         self.videoPlayer.play()
     }
