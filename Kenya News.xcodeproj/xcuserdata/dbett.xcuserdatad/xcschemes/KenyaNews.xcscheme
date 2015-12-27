@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B2139441C27DE0900096B45"
-               BuildableName = "KenyaNews.app"
-               BlueprintName = "KenyaNews"
-               ReferencedContainer = "container:KenyaNews.xcodeproj">
+               BuildableName = "Kenya News.app"
+               BlueprintName = "Kenya News"
+               ReferencedContainer = "container:Kenya News.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B2139441C27DE0900096B45"
-            BuildableName = "KenyaNews.app"
-            BlueprintName = "KenyaNews"
-            ReferencedContainer = "container:KenyaNews.xcodeproj">
+            BuildableName = "Kenya News.app"
+            BlueprintName = "Kenya News"
+            ReferencedContainer = "container:Kenya News.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B2139441C27DE0900096B45"
-            BuildableName = "KenyaNews.app"
-            BlueprintName = "KenyaNews"
-            ReferencedContainer = "container:KenyaNews.xcodeproj">
+            BuildableName = "Kenya News.app"
+            BlueprintName = "Kenya News"
+            ReferencedContainer = "container:Kenya News.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B2139441C27DE0900096B45"
-            BuildableName = "KenyaNews.app"
-            BlueprintName = "KenyaNews"
-            ReferencedContainer = "container:KenyaNews.xcodeproj">
+            BuildableName = "Kenya News.app"
+            BlueprintName = "Kenya News"
+            ReferencedContainer = "container:Kenya News.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B12BA821C2FBC9E00943F5A /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12BA811C2FBC9E00943F5A /* ArcLayer.swift */; };
 		8B2139491C27DE0900096B45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139481C27DE0900096B45 /* AppDelegate.swift */; };
 		8B21394B1C27DE0900096B45 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B21394A1C27DE0900096B45 /* NewsFeedViewController.swift */; };
 		8B2139501C27DE0900096B45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B21394F1C27DE0900096B45 /* Assets.xcassets */; };
@@ -16,10 +17,7 @@
 		8B2139631C27DF3D00096B45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2139621C27DF3D00096B45 /* LaunchScreen.storyboard */; };
 		8B2139651C27DF4F00096B45 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139641C27DF4F00096B45 /* NewsFeedTableViewCell.swift */; };
 		8B21396B1C27E00700096B45 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139691C27E00700096B45 /* SWRevealViewController.m */; };
-		8B2139761C28F10100096B45 /* OvalLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139711C28F10100096B45 /* OvalLayer.swift */; };
-		8B2139771C28F10100096B45 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139721C28F10100096B45 /* TriangleLayer.swift */; };
 		8B2139781C28F10100096B45 /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139731C28F10100096B45 /* RectangleLayer.swift */; };
-		8B2139791C28F10100096B45 /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139741C28F10100096B45 /* ArcLayer.swift */; };
 		8B21397A1C28F10100096B45 /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139751C28F10100096B45 /* HolderView.swift */; };
 		8B21397F1C28F19400096B45 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B21397E1C28F19400096B45 /* Colors.swift */; };
 		8B2139821C28F31C00096B45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2139811C28F31C00096B45 /* ViewController.swift */; };
@@ -34,7 +32,8 @@
 /* Begin PBXFileReference section */
 		3A526D33493AB8F518E23463 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		48700F6B6F961221A4156252 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B2139451C27DE0900096B45 /* KenyaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KenyaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B12BA811C2FBC9E00943F5A /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
+		8B2139451C27DE0900096B45 /* Kenya News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kenya News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2139481C27DE0900096B45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B21394A1C27DE0900096B45 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		8B21394F1C27DE0900096B45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,10 +46,7 @@
 		8B2139681C27E00700096B45 /* KenyaNews-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KenyaNews-Bridging-Header.h"; sourceTree = "<group>"; };
 		8B2139691C27E00700096B45 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8B21396A1C27E00700096B45 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		8B2139711C28F10100096B45 /* OvalLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalLayer.swift; sourceTree = "<group>"; };
-		8B2139721C28F10100096B45 /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
 		8B2139731C28F10100096B45 /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
-		8B2139741C28F10100096B45 /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
 		8B2139751C28F10100096B45 /* HolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
 		8B21397E1C28F19400096B45 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8B2139811C28F31C00096B45 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +99,7 @@
 		8B2139461C27DE0900096B45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B2139451C27DE0900096B45 /* KenyaNews.app */,
+				8B2139451C27DE0900096B45 /* Kenya News.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,10 +144,8 @@
 		8B21397C1C28F12400096B45 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				8B2139711C28F10100096B45 /* OvalLayer.swift */,
-				8B2139721C28F10100096B45 /* TriangleLayer.swift */,
+				8B12BA811C2FBC9E00943F5A /* ArcLayer.swift */,
 				8B2139731C28F10100096B45 /* RectangleLayer.swift */,
-				8B2139741C28F10100096B45 /* ArcLayer.swift */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -187,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8B2139441C27DE0900096B45 /* KenyaNews */ = {
+		8B2139441C27DE0900096B45 /* Kenya News */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B2139571C27DE0900096B45 /* Build configuration list for PBXNativeTarget "KenyaNews" */;
+			buildConfigurationList = 8B2139571C27DE0900096B45 /* Build configuration list for PBXNativeTarget "Kenya News" */;
 			buildPhases = (
 				524A7D0717E0038F3A66AD4C /* Check Pods Manifest.lock */,
 				8B2139411C27DE0900096B45 /* Sources */,
@@ -202,9 +196,9 @@
 			);
 			dependencies = (
 			);
-			name = KenyaNews;
+			name = "Kenya News";
 			productName = KenyaNews;
-			productReference = 8B2139451C27DE0900096B45 /* KenyaNews.app */;
+			productReference = 8B2139451C27DE0900096B45 /* Kenya News.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -223,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8B2139401C27DE0900096B45 /* Build configuration list for PBXProject "KenyaNews" */;
+			buildConfigurationList = 8B2139401C27DE0900096B45 /* Build configuration list for PBXProject "Kenya News" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -236,7 +230,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8B2139441C27DE0900096B45 /* KenyaNews */,
+				8B2139441C27DE0900096B45 /* Kenya News */,
 			);
 		};
 /* End PBXProject section */
@@ -307,14 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B12BA821C2FBC9E00943F5A /* ArcLayer.swift in Sources */,
 				8B21397A1C28F10100096B45 /* HolderView.swift in Sources */,
 				8B21396B1C27E00700096B45 /* SWRevealViewController.m in Sources */,
-				8B2139761C28F10100096B45 /* OvalLayer.swift in Sources */,
 				8B21395D1C27DED900096B45 /* MenuTableViewController.swift in Sources */,
 				8B2139821C28F31C00096B45 /* ViewController.swift in Sources */,
 				8B2139781C28F10100096B45 /* RectangleLayer.swift in Sources */,
-				8B2139771C28F10100096B45 /* TriangleLayer.swift in Sources */,
-				8B2139791C28F10100096B45 /* ArcLayer.swift in Sources */,
 				8B6DD30C1C2DBDB2002287BF /* VideoViewController.swift in Sources */,
 				8B21397F1C28F19400096B45 /* Colors.swift in Sources */,
 				8B21395B1C27DECE00096B45 /* ChannelVideo.swift in Sources */,
@@ -418,7 +410,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dominicbett.KenyaNews;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Kenya News";
 				SWIFT_OBJC_BRIDGING_HEADER = "KenyaNews/KenyaNews-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -434,7 +426,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dominicbett.KenyaNews;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Kenya News";
 				SWIFT_OBJC_BRIDGING_HEADER = "KenyaNews/KenyaNews-Bridging-Header.h";
 			};
 			name = Release;
@@ -442,7 +434,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8B2139401C27DE0900096B45 /* Build configuration list for PBXProject "KenyaNews" */ = {
+		8B2139401C27DE0900096B45 /* Build configuration list for PBXProject "Kenya News" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B2139551C27DE0900096B45 /* Debug */,
@@ -451,7 +443,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B2139571C27DE0900096B45 /* Build configuration list for PBXNativeTarget "KenyaNews" */ = {
+		8B2139571C27DE0900096B45 /* Build configuration list for PBXNativeTarget "Kenya News" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B2139581C27DE0900096B45 /* Debug */,

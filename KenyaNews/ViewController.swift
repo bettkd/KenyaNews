@@ -34,7 +34,7 @@ class ViewController: UIViewController, HolderViewDelegate {
     holderView.parentFrame = view.frame
     holderView.delegate = self
     view.addSubview(holderView)
-    holderView.addOval()
+    holderView.drawBlueAnimatedRectangle()
   }
   
   func animateLabel() {
@@ -57,7 +57,7 @@ class ViewController: UIViewController, HolderViewDelegate {
     view.addSubview(lblWelcome)
 
     // 3
-    UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.2, options: UIViewAnimationOptions.CurveEaseInOut,
+    UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.2, options: UIViewAnimationOptions.CurveEaseInOut,
       animations: ({
         lblWelcome.transform = CGAffineTransformScale(lblWelcome.transform, 4.0, 4.0)
       }), completion: { finished in
