@@ -51,7 +51,8 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         cell.textLabel?.text = channels[indexPath.row]
-
+        cell.textLabel?.font = UIFont(name: "Gill Sans", size: 18.0)
+        
         return cell
     }
 

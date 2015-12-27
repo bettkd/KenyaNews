@@ -27,7 +27,7 @@
                                     <fragment content="Kenya TV Channels">
                                         <attributes>
                                             <color key="NSColor" red="0.1803921568627451" green="0.45882352941176469" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
+                                            <font key="NSFont" size="22" name="GillSans-SemiBold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -39,11 +39,11 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="53" id="Oba-Pr-NdP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="53" id="Oba-Pr-NdP">
                                         <rect key="frame" x="0.0" y="28" width="293" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oba-Pr-NdP" id="JNa-SV-g7R">
-                                            <rect key="frame" x="0.0" y="0.0" width="293" height="52.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -156,7 +156,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="slG-Xh-Gca">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="560"/>
+                                <rect key="frame" x="0.0" y="34" width="320" height="526"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexTrackingBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -226,10 +226,38 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Pz-Vo-kbe">
+                                <rect key="frame" x="0.0" y="64" width="320" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyv-KA-YvL">
+                                        <rect key="frame" x="1" y="0.0" width="158" height="27"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.45882352939999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                        <state key="normal" title="Recent">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnRecent:" destination="I03-PQ-GcJ" eventType="touchUpInside" id="8BR-Ki-iAF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0W-3X-jEf">
+                                        <rect key="frame" x="161" y="0.0" width="158" height="27"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.45882352939999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                        <state key="normal" title="Views">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnViews:" destination="I03-PQ-GcJ" eventType="touchUpInside" id="DgQ-ry-dga"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.27131238855454543" green="0.053114881587940865" blue="0.030439743508140483" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.45882352939999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="slG-Xh-Gca" firstAttribute="top" secondItem="C5d-5y-czk" secondAttribute="top" id="RIR-pW-kcR"/>
+                            <constraint firstItem="slG-Xh-Gca" firstAttribute="top" secondItem="C5d-5y-czk" secondAttribute="top" constant="34" id="RIR-pW-kcR"/>
                             <constraint firstItem="slG-Xh-Gca" firstAttribute="leading" secondItem="C5d-5y-czk" secondAttribute="leading" id="fbF-Lf-WUX"/>
                             <constraint firstItem="XrX-nz-KgV" firstAttribute="top" secondItem="slG-Xh-Gca" secondAttribute="bottom" constant="8" symbolic="YES" id="hqG-3G-3UR"/>
                             <constraint firstAttribute="trailing" secondItem="slG-Xh-Gca" secondAttribute="trailing" id="n6L-UM-9OA"/>
@@ -241,6 +269,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="_btnRecent" destination="Hyv-KA-YvL" id="j8P-yc-u5L"/>
+                        <outlet property="_btnViews" destination="j0W-3X-jEf" id="h3I-nv-w7u"/>
                         <outlet property="btnRevealMenu" destination="KDE-PS-tVL" id="tUN-7i-lHS"/>
                         <outlet property="videosTableView" destination="slG-Xh-Gca" id="1ga-jD-OTP"/>
                     </connections>

@@ -33,6 +33,8 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     
     @IBOutlet weak var videosTableView: UITableView!
     @IBOutlet weak var btnRevealMenu: UIBarButtonItem!
+    @IBOutlet weak var _btnRecent: UIButton!
+    @IBOutlet weak var _btnViews: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -209,6 +211,20 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
                 destVC.video = videos[indexPath.row]
             }
         }
+    }
+
+    @IBAction func btnRecent(sender: AnyObject) {
+        videos = videos.sort({$0.views > $1.views})
+        videosTableView.reloadData()
+        self._btnRecent.alpha = 0.8
+        self._btnViews.alpha = 1.0
+    }
+    
+    @IBAction func btnViews(sender: AnyObject) {
+        videos = videos.sort({$0.published > $1.published})
+        videosTableView.reloadData()
+        self._btnRecent.alpha = 1.0
+        self._btnViews.alpha = 0.8
     }
     
 }
