@@ -34,4 +34,23 @@ class ChannelVideo: NSObject {
         videoID = ""
         views = 0
     }
+    
+    //MARK: NSCoding
+    required init(coder aDecoder: NSCoder) {
+        self.title = aDecoder.decodeObjectForKey("title") as! String
+        self.summary = aDecoder.decodeObjectForKey("summary") as! String
+        self.published = aDecoder.decodeObjectForKey("published") as! String
+        self.thumbnail = aDecoder.decodeObjectForKey("thumbnail") as! UIImage
+        self.videoID = aDecoder.decodeObjectForKey("videoID") as! String
+        self.views = aDecoder.decodeObjectForKey("views") as! Int
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder){
+        aCoder.encodeObject(title, forKey: "title")
+        aCoder.encodeObject(summary, forKey: "summary")
+        aCoder.encodeObject(published, forKey: "published")
+        aCoder.encodeObject(thumbnail, forKey: "thumbnail")
+        aCoder.encodeObject(videoID, forKey: "videoID")
+        aCoder.encodeObject(views, forKey: "views")
+    }
 }

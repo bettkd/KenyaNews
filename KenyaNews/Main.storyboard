@@ -12,7 +12,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="Cf0-Zn-0g7">
             <objects>
-                <viewController id="mAb-os-uFb" customClass="MenuTableViewController" customModule="KenyaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mAb-os-uFb" customClass="MenuTableViewController" customModule="Kenya_News" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t3q-HZ-QqD"/>
                         <viewControllerLayoutGuide type="bottom" id="oiy-I4-PGd"/>
@@ -39,8 +39,8 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8HO-OH-pE8">
                                 <rect key="frame" x="11" y="77" width="293" height="471"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="53" id="Oba-Pr-NdP">
                                         <rect key="frame" x="0.0" y="28" width="293" height="53"/>
@@ -49,7 +49,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="KKI-gN-5g9" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Adb-kp-Qm9"/>
                                         </connections>
@@ -57,7 +57,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8HO-OH-pE8" firstAttribute="trailing" secondItem="fiw-ZT-dEt" secondAttribute="trailingMargin" id="1gk-Dd-hQ7"/>
                             <constraint firstItem="QfD-q5-LBU" firstAttribute="top" secondItem="t3q-HZ-QqD" secondAttribute="bottom" constant="8" symbolic="YES" id="2AV-4T-uF8"/>
@@ -79,7 +79,7 @@
         <!--View Controller-->
         <scene sceneID="8nV-Gj-gfK">
             <objects>
-                <viewController id="S0d-ul-oSV" customClass="ViewController" customModule="KenyaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="S0d-ul-oSV" customClass="ViewController" customModule="Kenya_News" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jQ5-ux-oYg"/>
                         <viewControllerLayoutGuide type="bottom" id="Lwr-93-Kvm"/>
@@ -131,7 +131,7 @@
                         <color key="barTintColor" red="0.18039215689999999" green="0.45882352939999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
-                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ya8-dP-lJm">
@@ -149,7 +149,7 @@
         <!--Kenya News-->
         <scene sceneID="5Nu-Jg-77h">
             <objects>
-                <viewController storyboardIdentifier="home" modalTransitionStyle="flipHorizontal" id="I03-PQ-GcJ" customClass="NewsFeedViewController" customModule="KenyaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" modalTransitionStyle="flipHorizontal" id="I03-PQ-GcJ" customClass="NewsFeedViewController" customModule="Kenya_News" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1XQ-cV-ACV"/>
                         <viewControllerLayoutGuide type="bottom" id="XrX-nz-KgV"/>
@@ -160,11 +160,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="slG-Xh-Gca">
                                 <rect key="frame" x="0.0" y="37" width="320" height="523"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <color key="sectionIndexTrackingBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="62" id="gJG-rP-aed" customClass="NewsFeedTableViewCell" customModule="KenyaNews" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="62" id="gJG-rP-aed" customClass="NewsFeedTableViewCell" customModule="Kenya_News" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gJG-rP-aed" id="gPv-eY-XBF">
@@ -179,7 +179,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="views" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIm-v9-dZ3">
                                                     <rect key="frame" x="88" y="44" width="86" height="15"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="86" id="aJu-Fn-sRm"/>
                                                     </constraints>
@@ -188,19 +188,19 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2h-d5-5uc">
                                                     <rect key="frame" x="177" y="44" width="135" height="15"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="GillSans-LightItalic" family="Gill Sans" pointSize="12"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93X-ae-9je">
                                                     <rect key="frame" x="88" y="0.0" width="224" height="45"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.45882352939999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="93X-ae-9je" firstAttribute="leading" secondItem="2BP-2B-He5" secondAttribute="trailing" constant="8" symbolic="YES" id="2Sg-0a-T6g"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="gIm-v9-dZ3" secondAttribute="bottom" constant="-5.5" id="3BJ-pM-IK1"/>
@@ -218,7 +218,7 @@
                                                 <constraint firstItem="c2h-d5-5uc" firstAttribute="top" secondItem="gIm-v9-dZ3" secondAttribute="top" id="ycg-ep-7oW"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="imgThumbnail" destination="2BP-2B-He5" id="K8P-CT-yhn"/>
                                             <outlet property="lblDate" destination="c2h-d5-5uc" id="Udp-yj-HvC"/>
@@ -240,7 +240,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="btnViews:" destination="I03-PQ-GcJ" eventType="touchUpInside" id="DgQ-ry-dga"/>
+                                            <action selector="btnPopular:" destination="I03-PQ-GcJ" eventType="touchUpInside" id="9jc-rP-4dP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyv-KA-YvL">
@@ -255,7 +255,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="j0W-3X-jEf" secondAttribute="trailing" constant="1" id="AON-IS-Okl"/>
                                     <constraint firstItem="j0W-3X-jEf" firstAttribute="width" secondItem="Hyv-KA-YvL" secondAttribute="width" id="OtJ-bb-019"/>
@@ -286,8 +286,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="_btnPopular" destination="j0W-3X-jEf" id="uAW-3Q-1IJ"/>
                         <outlet property="_btnRecent" destination="Hyv-KA-YvL" id="j8P-yc-u5L"/>
-                        <outlet property="_btnViews" destination="j0W-3X-jEf" id="h3I-nv-w7u"/>
                         <outlet property="btnRevealMenu" destination="KDE-PS-tVL" id="tUN-7i-lHS"/>
                         <outlet property="videosTableView" destination="slG-Xh-Gca" id="1ga-jD-OTP"/>
                     </connections>
@@ -299,7 +299,7 @@
         <!--Video-->
         <scene sceneID="Frv-kk-mtY">
             <objects>
-                <viewController id="P2y-pz-Jue" customClass="VideoViewController" customModule="KenyaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="P2y-pz-Jue" customClass="VideoViewController" customModule="Kenya_News" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PFx-VM-ASZ"/>
                         <viewControllerLayoutGuide type="bottom" id="6cG-7g-QcG"/>
@@ -317,7 +317,7 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zJT-sg-tcC">
                                 <rect key="frame" x="7" y="287" width="303" height="48"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="u99-Qu-bwc"/>
                                 </constraints>
@@ -327,7 +327,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="views" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuQ-TJ-8IG">
                                 <rect key="frame" x="7" y="267" width="58" height="20"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ggm-Qp-wRd"/>
                                     <constraint firstAttribute="width" constant="58" id="iLZ-TA-sYZ"/>
@@ -337,7 +337,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" text="Description" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="X6S-wE-pbl">
                                 <rect key="frame" x="7" y="334" width="303" height="184"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="184" id="tft-0z-QZz"/>
                                 </constraints>
@@ -347,12 +347,12 @@
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lm-kQ-Ghl">
                                 <rect key="frame" x="116" y="267" width="194" height="20"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xuQ-TJ-8IG" firstAttribute="leading" secondItem="Qhk-cA-Bkk" secondAttribute="leadingMargin" constant="-9" id="CO1-d1-gtf"/>
                             <constraint firstItem="2Lm-kQ-Ghl" firstAttribute="top" secondItem="xuQ-TJ-8IG" secondAttribute="top" id="TSl-oQ-6Aq"/>

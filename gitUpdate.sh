@@ -6,4 +6,4 @@ git add -A
 read -e -p "Please enter the commit message: " commit_message 
 echo "Commit message is - $commit_message."
 git commit -m "$commit_message"
-git push -u origin version2
+git push -u origin version1.0.1
