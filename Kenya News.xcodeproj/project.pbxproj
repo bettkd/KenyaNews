@@ -27,7 +27,7 @@
 		8B6DD3101C2E2F5B002287BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6DD30F1C2E2F5B002287BF /* UIKit.framework */; };
 		8B6DD3121C2E2F65002287BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6DD3111C2E2F65002287BF /* Foundation.framework */; };
 		8B6DD3141C2E2F71002287BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6DD3131C2E2F71002287BF /* CoreGraphics.framework */; };
-		BD5F1B7D8D9526A8961A691B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48700F6B6F961221A4156252 /* Pods.framework */; };
+		8BED22591C534F7C00AE019F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BED22581C534F7C00AE019F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +57,9 @@
 		8B6DD30F1C2E2F5B002287BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8B6DD3111C2E2F65002287BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8B6DD3131C2E2F71002287BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8BED22541C5346AF00AE019F /* Swift_YouTube_Player.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swift_YouTube_Player.framework; path = "Pods/../build/Release-iphoneos/Swift_YouTube_Player.framework"; sourceTree = "<group>"; };
+		8BED22561C534F2A00AE019F /* Swift_YouTube_Player.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swift_YouTube_Player.framework; path = "Pods/../build/Release-iphoneos/Swift_YouTube_Player.framework"; sourceTree = "<group>"; };
+		8BED22581C534F7C00AE019F /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		8FE8DC8B8E9520938233D9F2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,8 +71,8 @@
 				8B6DD3141C2E2F71002287BF /* CoreGraphics.framework in Frameworks */,
 				8B6DD3121C2E2F65002287BF /* Foundation.framework in Frameworks */,
 				8B6DD3101C2E2F5B002287BF /* UIKit.framework in Frameworks */,
+				8BED22591C534F7C00AE019F /* Pods.framework in Frameworks */,
 				8B6DD30E1C2E2F4E002287BF /* iAd.framework in Frameworks */,
-				BD5F1B7D8D9526A8961A691B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,9 @@
 		59539881736DF6AD527676F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BED22581C534F7C00AE019F /* Pods.framework */,
+				8BED22561C534F2A00AE019F /* Swift_YouTube_Player.framework */,
+				8BED22541C5346AF00AE019F /* Swift_YouTube_Player.framework */,
 				8B6DD3131C2E2F71002287BF /* CoreGraphics.framework */,
 				8B6DD3111C2E2F65002287BF /* Foundation.framework */,
 				8B6DD30F1C2E2F5B002287BF /* UIKit.framework */,
@@ -356,6 +362,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "d118cdb9-4ab3-4066-9338-be2997d52ab5";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -370,6 +377,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = KenyaNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -459,6 +471,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "d118cdb9-4ab3-4066-9338-be2997d52ab5";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -473,6 +486,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = KenyaNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -492,6 +510,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = KenyaNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
