@@ -24,7 +24,7 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     var _summary = ""
     var _title = ""
     
-    var feeds = 10 // Limits number of feeds to 8
+    var feeds = 10 // Limits number of feeds to 10
     
     var parser = NSXMLParser()
     var video = ChannelVideo()
@@ -34,7 +34,9 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     @IBOutlet weak var videosTableView: UITableView!
     @IBOutlet weak var btnRevealMenu: UIBarButtonItem!
     @IBOutlet weak var _btnRecent: UIButton!
-    @IBOutlet weak var _btnViews: UIButton!
+    @IBOutlet weak var _btnPopular: UIButton!
+    var refreshControl:UIRefreshControl!
+    var tableViewAnimation = "Automatic"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +50,55 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         btnRevealMenu.action = Selector("revealToggle:")
 
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
         
-        url = urlRoot + _channels[currentChannel]!
+        
+        refresh(self, animation: tableViewAnimation)
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.backgroundColor = Colors.blue
+        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.videosTableView?.addSubview(self.refreshControl)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let font:UIFont = UIFont(name: "HelveticaNeue", size: 12) {
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font]
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: Colors.white]
+        }
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let currentTime = NSDate()
+        var duration:Int = Int()
+        
+        if let prevTime = NSUserDefaults.standardUserDefaults().objectForKey("_time") as? NSDate {
+            duration = NSCalendar.currentCalendar().components(.Minute, fromDate: prevTime, toDate: currentTime, options: []).minute
+            NSUserDefaults.standardUserDefaults().setObject(currentTime, forKey: "_time")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        } else {
+            NSUserDefaults.standardUserDefaults().setObject(currentTime, forKey: "_time")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
+        // Refresh every five minutes
+        if duration > 15 {
+            refresh(self, animation: tableViewAnimation)
+        }
+    }
+    
+    func loadVideos(channel:String){
+        url = urlRoot + _channels[channel]!
         
         if let urlToSend: NSURL = NSURL(string: url)! {
             
@@ -66,21 +114,51 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
                 print("parse failure!")
             }
         }
-
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.tintColor = Colors.white
-        if let font = UIFont(name: "HelveticaNeue", size: 12) {
-            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font]
-            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: Colors.white]
+    func refresh(sender:AnyObject, animation:String){
+        
+        if Reachability.isConnectedToNetwork() {
+            print("good to go")
+        } else {
+            print("Internet connection not available")
+            
+            let alert = UIAlertView(title: "No Internet connection", message: "Please ensure you are connected to the Internet", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
         }
+        
+        // Load in background
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let myActivityIndicator = UIActivityIndicatorView( activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+            myActivityIndicator.center = self.view.center
+            myActivityIndicator.startAnimating()
+            self.view.addSubview(myActivityIndicator)
+            
+            self.loadVideos(self.currentChannel)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                //self.videosTableView.reloadData()
+                let range = NSMakeRange(0, self.videosTableView.numberOfSections)
+                let sections = NSIndexSet(indexesInRange: range)
+                if animation == "Right" {
+                    self.videosTableView.reloadSections(sections, withRowAnimation: .Right)
+                } else if animation == "Automatic" {
+                    self.videosTableView.reloadSections(sections, withRowAnimation: .Automatic)
+                }
+                
+                myActivityIndicator.stopAnimating()
+                
+                //self.videosTableView.separatorStyle = .SingleLine
+            }
+        }
+        self.refreshControl?.endRefreshing()
+    }
+    
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        tableViewAnimation = "Automatic"
+        refresh(self, animation: tableViewAnimation)
+        refreshControl.endRefreshing()
     }
 
     
@@ -105,11 +183,9 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
             }
             if(elementName=="media:statistics") {
                 self.video.views = Int(attributeDict["views"]!)!
-                
                 //Add video at the end of last element
                 videos.append(video) // Appends at the end
                 video = ChannelVideo()
-                
                 feeds -= 1
             }
         }
@@ -138,7 +214,6 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     func parser(parser: NSXMLParser, foundCharacters data: String) {
         if(vID){
             video.videoID = data
-            //print (data)
         }
         if (vtitle){
             _title += data
@@ -178,30 +253,43 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
     
     // MARK: Table View render ---
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        //print(videos.count)
         return videos.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! NewsFeedTableViewCell
         
-        let data:ChannelVideo = videos[indexPath.row]
+        let data = videos[indexPath.row]
         
-        cell.imgThumbnail.image = data.thumbnail
         cell.imgThumbnail.layer.cornerRadius = 3.0
-        cell.lblDate.text = data.published
-        cell.lblViews.text = "\(data.views) Views"
-        cell.lblTitle.text = data.title
+        cell.imgThumbnail.image = data.thumbnail
         
+        let currentTime = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.timeStyle = .MediumStyle
+        let published = dateFormatter.dateFromString(data.published)
+        let duration = NSCalendar.currentCalendar().components(.Day, fromDate: published!, toDate: currentTime, options: []).day
+        var day:String
+        if duration == 0 { day = "Today" }
+        else if duration == 1 { day = "Yesterday"}
+        else { day = "\(duration) days ago"}
+        cell.lblDate.text = day
+        cell.lblViews.text = "\(data.views) views"
+        cell.lblTitle.text = data.title
         return cell
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.contentView.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+    }
+    
+    // SEGUE
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let indexPath: NSIndexPath = videosTableView.indexPathForSelectedRow {
             if let destVC:VideoViewController = segue.destinationViewController as? VideoViewController {
@@ -210,18 +298,19 @@ class NewsFeedViewController: UIViewController, NSXMLParserDelegate, UITableView
         }
     }
 
+    // BUTTONS
     @IBAction func btnRecent(sender: AnyObject) {
         videos = videos.sort({$0.published > $1.published})
         videosTableView.reloadData()
         self._btnRecent.alpha = 0.8
-        self._btnViews.alpha = 1.0
+        self._btnPopular.alpha = 1.0
     }
     
-    @IBAction func btnViews(sender: AnyObject) {
+    @IBAction func btnPopular(sender: AnyObject) {
         videos = videos.sort({$0.views > $1.views})
         videosTableView.reloadData()
         self._btnRecent.alpha = 1.0
-        self._btnViews.alpha = 0.8
+        self._btnPopular.alpha = 0.8
     }
     
 }

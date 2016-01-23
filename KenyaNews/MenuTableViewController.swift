@@ -21,11 +21,6 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
         menuTableView.dataSource = self
         
         channels = ["NTV Kenya", "KTN News", "K24 TV", "Citizen TV", "KBC News", "Capital News", "QTV Kenya", "Kass International", "Ebru Africa TV", "East Africa TV", "Family TV Kenya", "Pwani TV"]
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +28,22 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.revealViewController().frontViewController.view.userInteractionEnabled = false
+        
+        /* //Not Working...
+        self.revealViewController().frontViewController.navigationController?.navigationController?.navigationBar.userInteractionEnabled = true
+    self.revealViewController().frontViewController.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        */
+        
+        self.revealViewController().view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.revealViewController().frontViewController.view.userInteractionEnabled = true
+    }
     /*
     // MARK: - Table view data source
 
@@ -56,12 +67,13 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
 
-    // MARK: Pass Values By Segue
+    // MARK: Navigation - Pass Values By Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let navVC = segue.destinationViewController as? UINavigationController {
             if let destVC = navVC.viewControllers.first as? NewsFeedViewController {
                 if let indexPath = menuTableView.indexPathForSelectedRow {
                     destVC.currentChannel = channels[indexPath.row]
+                    destVC.tableViewAnimation = "Right"
                 }
             }
         }
@@ -99,16 +111,6 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     */
 

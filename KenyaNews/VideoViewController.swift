@@ -37,7 +37,7 @@ class VideoViewController: UIViewController, YouTubePlayerDelegate, ADBannerView
         super.viewWillAppear(true)
         
         // Load  Video
-        //self.videoPlayer.clear()
+        self.videoPlayer.clear()
         videoPlayer.delegate = self
         self.videoPlayer.playerVars = ["playsinline": "1"]
         self.videoPlayer.loadVideoID(video.videoID)
@@ -47,15 +47,16 @@ class VideoViewController: UIViewController, YouTubePlayerDelegate, ADBannerView
         self.lblDate.text = video.published
         self.txtDescription.text = video.summary
         self.txtDescription.setContentOffset(CGPointZero, animated: true)
+        
+        if let font = UIFont(name: "HelveticaNeue", size: 12) {
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font]
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: Colors.white]
+        }
     }
 
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         loadAds()
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        self.appDelegate.adBannerView.removeFromSuperview()
-        self.videoPlayer.stop()
     }
     
     func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
@@ -111,5 +112,23 @@ class VideoViewController: UIViewController, YouTubePlayerDelegate, ADBannerView
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
         self.appDelegate.adBannerView.hidden = true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        self.appDelegate.adBannerView.removeFromSuperview()
+        self.videoPlayer.pause()
+        self.videoPlayer.clear()
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Player playing or buffering
+        //print (self.videoPlayer.playerState.rawValue)
+        if self.videoPlayer.playerState.rawValue == "1" || self.videoPlayer.playerState.rawValue == "3" {
+            print("sleep")
+            usleep(300000)
+            self.videoPlayer.stop()
+        }
     }
 }

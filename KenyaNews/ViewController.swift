@@ -67,24 +67,26 @@ class ViewController: UIViewController, HolderViewDelegate {
     })
     
     // 4
-    let lblTap: UILabel = UILabel(frame: CGRectMake(0,0,screen.width,50))
-    lblTap.center = CGPointMake(screen.width/2, screen.height/2 + 50)
-    lblTap.textColor = Colors.white
-    lblTap.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
-    lblTap.textAlignment = NSTextAlignment.Center
-    lblTap.text = "Loading news..."
+    let lblLoad: UILabel = UILabel(frame: CGRectMake(0,0,screen.width,50))
+    //lblLoad.center = CGPointMake(screen.width/2, screen.height/2 + 50)
+    lblLoad.center = CGPointMake(screen.width/2, screen.height - 50)
+    lblLoad.textColor = Colors.white
+    lblLoad.font = UIFont(name: "HelveticaNeue-Thin", size: 14)
+    lblLoad.textAlignment = NSTextAlignment.Center
+    lblLoad.text = "Dominic Bett © 2016. All rights reserved."
     //lblTap.transform = CGAffineTransformScale(lblWelcome.transform, 0.25, 0.25)
-    view.addSubview(lblTap)
+    view.addSubview(lblLoad)
     
+    /*
     // 5
     let lblCredits: UILabel = UILabel(frame: CGRectMake(0,0,screen.width,50))
     lblCredits.center = CGPointMake(screen.width/2, screen.height - 50)
     lblCredits.textColor = Colors.white
     lblCredits.font = UIFont(name: "HelveticaNeue-Thin", size: 12)
-    lblCredits.textAlignment = NSTextAlignment.Center
-    lblCredits.text = "Dominic Bett © 2016"
+    lblCredits.textAlig nment = NSTextAlignment.Center
+    lblCredits.text = "Kenya News © 2016"
     //lblTap.transform = CGAffineTransformScale(lblWelcome.transform, 0.25, 0.25)
-    view.addSubview(lblCredits)
+    view.addSubview(lblCredits)*/
   }
   
     /* Load the main page directly
